@@ -16,10 +16,10 @@ export default function Header() {
             lg:static fixed top-0 left-0 z-50 lg:bg-[#fafafa] bg-white lg:shadow-none shadow-2xl flex lg:flex-row flex-col gap-10 lg:justify-evenly lg:items-center`}
             >
                 <BsFillBackspaceFill color="#FF7A50" className="lg:hidden absolute right-5" size={30} onClick={() => setRes("translate-x-[-100%]")} />
-                <NavLink className='hover:text-[#FF7A50] transition-all'>Главная</NavLink>
+                <NavLink className='hover:text-[#FF7A50] transition-all' to='/'>Главная</NavLink>
                 <NavLink className='hover:text-[#FF7A50] transition-all'>О нас</NavLink>
                 <NavLink className='hover:text-[#FF7A50] transition-all'>Портфолио</NavLink>
-                <NavLink className='hover:text-[#FF7A50] transition-all'>Калькулятор</NavLink>
+                <NavLink className='hover:text-[#FF7A50] transition-all' to='calculate'>Калькулятор</NavLink>
                 <NavLink className='hover:text-[#FF7A50] transition-all'>Контакты</NavLink>
                 <button className="bg-[#FF7A50] px-10 py-2 hover:bg-[#a84527] text-sm transition-all text-white rounded-md">Заказать</button>
             </div>

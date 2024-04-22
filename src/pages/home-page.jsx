@@ -14,10 +14,6 @@ import section2 from '../covers/delivery.png'
 export default function HomePage() {
     return (
         <div>
-            <Header />
-            <div className='h-[100px] w-full'>
-
-            </div>
             <div className='w-[100%] h-[600px] lg:px-20 mx-auto px-4 pt-0 lg:pt-0 flex lg:flex-row flex-col-reverse justify-between items-center'>
                 <div>
                     <h1> <span className='lg:text-[50px] text-[30px] font-semibold'>Приветствуем <span className='text-[#FF7A50]'>вас</span>
