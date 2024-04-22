@@ -2,8 +2,19 @@ import React, { useState } from "react";
 import { NavLink } from 'react-router-dom'
 import { GiHamburgerMenu } from "react-icons/gi"
 import { BsFillBackspaceFill } from "react-icons/bs";
+import Modal2 from "./modal2";
 
 export default function Header() {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     const [res, setRes] = useState("translate-x-[-100%]")
     return (
@@ -17,15 +28,15 @@ export default function Header() {
             >
                 <BsFillBackspaceFill color="#FF7A50" className="lg:hidden absolute right-5" size={30} onClick={() => setRes("translate-x-[-100%]")} />
                 <NavLink className='hover:text-[#FF7A50] transition-all' to='/'>Главная</NavLink>
-                <NavLink className='hover:text-[#FF7A50] transition-all'>О нас</NavLink>
-                <NavLink className='hover:text-[#FF7A50] transition-all'>Портфолио</NavLink>
+                <NavLink className='hover:text-[#FF7A50] transition-all' to='/portfolio'>Портфолио</NavLink>
                 <NavLink className='hover:text-[#FF7A50] transition-all' to='calculate'>Калькулятор</NavLink>
-                <NavLink className='hover:text-[#FF7A50] transition-all'>Контакты</NavLink>
-                <button className="bg-[#FF7A50] px-10 py-2 hover:bg-[#a84527] text-sm transition-all text-white rounded-md">Заказать</button>
+                <NavLink className='hover:text-[#FF7A50] transition-all' to='/contact'>Контакты</NavLink>
+                <button className="bg-[#FF7A50] px-10 py-2 hover:bg-[#a84527] text-sm transition-all text-white rounded-md" onClick={openModal}>Заказать</button>
             </div>
             <div className="lg:hidden bg-[#FF7A50] p-2 rounded-sm text-white">
                 <GiHamburgerMenu onClick={() => setRes("translate-x-none")} />
             </div>
+            {isModalOpen && <Modal2 closeModal={closeModal} />}
         </div>
     )
 }

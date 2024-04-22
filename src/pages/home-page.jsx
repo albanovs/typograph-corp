@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/header'
 import section from '../covers/banner7.jpg'
 import vizitka from '../covers/vizitka.png'
@@ -10,8 +10,20 @@ import biri from '../covers/biri.png'
 import otkrytki from '../covers/otkrytki.png'
 import sertificat from '../covers/sertificat.jpg'
 import section2 from '../covers/delivery.png'
+import Modal2 from '../components/modal2'
 
 export default function HomePage() {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <div>
             <div className='w-[100%] h-[600px] lg:px-20 mx-auto px-4 pt-0 lg:pt-0 flex lg:flex-row flex-col-reverse justify-between items-center'>
@@ -22,7 +34,7 @@ export default function HomePage() {
                         идея превращаются в живое произведение искусства.</h1>
                     <div className='flex gap-5 mt-5'>
                         <button className='lg:px-6 lg:py-5 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white'>Получить бесплатную консультацию</button>
-                        <button className='lg:px-6 lg:py-5 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white'>Заказать</button>
+                        <button className='lg:px-6 lg:py-5 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white' onClick={openModal}>Заказать</button>
                     </div>
                 </div>
                 <div>
@@ -51,49 +63,49 @@ export default function HomePage() {
                         <img className='w-[150px] h-[150px]' src={vizitka} alt="" />
                         <h1 className="font-bold text-[18px] pt-1">Визитки</h1>
                         <span className="text-[#a1a1a1]">от 20 сом шт</span>
-                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white'>Заказать</button>
+                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white' onClick={openModal}>Заказать</button>
                     </div>
                     <div className='cursor-pointer hover:scale-90 transition-all relative w-[300px] h-[250px] rounded-sm bg-white flex flex-col items-center justify-center'>
                         <img className='w-[150px] h-[150px]' src={blocknot} alt="" />
                         <h1 className="font-bold text-[18px] pt-1">Блокноты</h1>
                         <span className="text-[#a1a1a1]">от 20 сом шт</span>
-                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white'>Заказать</button>
+                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white' onClick={openModal}>Заказать</button>
                     </div>
                     <div className='cursor-pointer hover:scale-90 transition-all relative w-[300px] h-[250px] rounded-sm bg-white flex flex-col items-center justify-center'>
                         <img className='w-[150px] h-[150px]' src={listovki} alt="" />
                         <h1 className="font-bold text-[18px] pt-1">Листовки</h1>
                         <span className="text-[#a1a1a1]">от 20 сом шт</span>
-                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white'>Заказать</button>
+                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white' onClick={openModal}>Заказать</button>
                     </div>
                     <div className='cursor-pointer hover:scale-90 transition-all relative w-[300px] h-[250px] rounded-sm bg-white flex flex-col items-center justify-center'>
                         <img className='w-[150px] h-[150px]' src={kalendar} alt="" />
                         <h1 className="font-bold text-[18px] pt-1">Календари</h1>
                         <span className="text-[#a1a1a1]">от 20 сом шт</span>
-                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white'>Заказать</button>
+                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white' onClick={openModal}>Заказать</button>
                     </div>
                     <div className='cursor-pointer hover:scale-90 transition-all relative w-[300px] h-[250px] rounded-sm bg-white flex flex-col items-center justify-center'>
                         <img className='w-[150px] h-[150px]' src={menu} alt="" />
                         <h1 className="font-bold text-[18px] pt-1">Меню</h1>
                         <span className="text-[#a1a1a1]">от 20 сом шт</span>
-                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white'>Заказать</button>
+                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white' onClick={openModal}>Заказать</button>
                     </div>
                     <div className='cursor-pointer hover:scale-90 transition-all relative w-[300px] h-[250px] rounded-sm bg-white flex flex-col items-center justify-center'>
                         <img className='w-[150px] h-[150px]' src={otkrytki} alt="" />
                         <h1 className="font-bold text-[18px] pt-1">Открытки</h1>
                         <span className="text-[#a1a1a1]">от 20 сом шт</span>
-                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white'>Заказать</button>
+                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white' onClick={openModal}>Заказать</button>
                     </div>
                     <div className='cursor-pointer hover:scale-90 transition-all relative w-[300px] h-[250px] rounded-sm bg-white flex flex-col items-center justify-center'>
                         <img className='w-[150px] h-[150px]' src={biri} alt="" />
                         <h1 className="font-bold text-[18px] pt-1">Бирки и этикетки</h1>
                         <span className="text-[#a1a1a1]">от 20 сом шт</span>
-                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white'>Заказать</button>
+                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white' onClick={openModal}>Заказать</button>
                     </div>
                     <div className='cursor-pointer hover:scale-90 transition-all relative w-[300px] h-[250px] rounded-sm bg-white flex flex-col items-center justify-center'>
                         <img className='w-[150px] h-[150px]' src={sertificat} alt="" />
                         <h1 className="font-bold text-[18px] pt-1">Сертификаты</h1>
                         <span className="text-[#a1a1a1]">от 20 сом шт</span>
-                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white'>Заказать</button>
+                        <button className='lg:px-6 absolute bottom-[-20px] lg:py-2 px-4 py-3 transition-all rounded-md lg:text-sm text-[10px]  bg-[#FF7A50] hover:bg-[#a84527] text-white' onClick={openModal}>Заказать</button>
                     </div>
                 </div>
                 <div className='flex w-ful flex-col items-center justify-center  mt-20 mb-20 bg-[#f0f0f0]'>
@@ -106,6 +118,7 @@ export default function HomePage() {
                     </iframe>
                 </div>
             </div>
+            {isModalOpen && <Modal2 closeModal={closeModal} />}
         </div >
     )
 }
